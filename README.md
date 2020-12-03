@@ -43,3 +43,8 @@ This repository has the following structure:
 Where each day contains an `input.txt` and a `day_xx.py` solution.
 
 Each solution script prints the answer to the challenge parts.
+
+
+## TODO
+* add `%timeit` or similar to each day's solutions
+* add `poetry run YYYY-DD` or similar styled command
