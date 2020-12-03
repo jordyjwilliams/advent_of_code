@@ -23,7 +23,7 @@ with open(Path.joinpath(DATA_PATH, "input.txt")) as input_file:
 
 def count_number_trees_hit_in_path(
     data: ty.List, num_right: int = 3, num_down: int = 1
-):
+) -> int:
     """Counts number of trees hit in a downward/right
     traverse path.
 
