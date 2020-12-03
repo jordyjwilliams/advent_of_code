@@ -1,0 +1,17 @@
+
+*.DS_Store
+
+__pycache__/
+*.egg-info/
+*.eggs
+.ipynb_checkpoints
+
+.cache
+.coverage*
+.flake8
+.pytest_cache/
+cov_html/
+
+.vscode
+
+*.so
