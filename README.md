@@ -1,7 +1,7 @@
 # Advent of Code
 ![Language (Python)](https://img.shields.io/badge/powered_by-Python-blue.svg?style=flat) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-Solutions to the Advent of Code challenges.
+Solutions to the [Advent of Code](https://adventofcode.com/) challenges.
 
 These solutions are not designed to be the fastest computationally. They are simply the first ones I thought of.
 
