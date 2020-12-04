@@ -1,6 +1,7 @@
 """ Solution to Day 03 of Advent of Code 2020 """
 from pathlib import Path
 import typing as ty
+import timeit
 import numpy as np
 
 DATA_PATH = Path.resolve(Path(__file__).parent)
@@ -38,13 +39,18 @@ def count_number_trees_hit_in_path(
     return num_trees
 
 
+PART_1_START_TIME = timeit.default_timer()
 PART_1_ANS = count_number_trees_hit_in_path(DATA)
-print(f"Part 1:\n{PART_1_ANS} 🎄 hit\n")
+PART_1_TIME_MS = (timeit.default_timer() - PART_1_START_TIME) * 1000
 
+PART_2_START_TIME = timeit.default_timer()
 PART_2_PER_SLOPE = [
     count_number_trees_hit_in_path(DATA, slope[0], slope[1]) for slope in PART_2_SLOPES
 ]
 PART_2_ANS = np.product(PART_2_PER_SLOPE)
+PART_2_TIME_MS = (timeit.default_timer() - PART_2_START_TIME) * 1000
 
+print(f"Part 1:\n{PART_1_ANS} 🎄 hit\n")
 print(f"Part 2:\n{PART_2_PER_SLOPE} 🎄 hit for {PART_2_SLOPES}")
 print(f"Answer: {PART_2_ANS}\n")
+print(f"Timed Results:\nPart 1: {PART_1_TIME_MS} ms\nPart 2: {PART_2_TIME_MS} ms\n")
