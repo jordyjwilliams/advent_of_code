@@ -30,10 +30,11 @@ poetry install
 ## Poetry scripts
 
 ```
-poetry run lint                                 # run pylint
-poetry run format                               # run black formatter on files
-poetry run check_format                         # check formatting
-poetry run all_solutions                        # run all year(s) code solutions
+poetry run lint                                     # run pylint
+poetry run format                                   # run black formatter on files
+poetry run check_format                             # check formatting
+poetry run python ./YYYY/day_XX/day_XX_solution.py  # run solution for given year/day
+poetry run all_solutions                            # run all year(s) code solutions
 ```
 
 ## Structure
@@ -46,5 +47,4 @@ Each solution script prints the answer to the challenge parts.
 
 
 ## TODO
-* add `%timeit` or similar to each day's solutions
-* add `poetry run YYYY-DD` or similar styled command
+* improve singular day running `poetry run YYYY-DD` from function
