@@ -41,10 +41,12 @@ poetry run all_solutions                            # run all year(s) code solut
 This repository has the following structure:
 `root/year/day_{x}/`
 
-Where each day contains an `input.txt` and a `day_xx.py` solution.
+Where each day contains an `input.txt` and a `day_xx_solution.py`.
 
-Each solution script prints the answer to the challenge parts.
+Each solution script prints the answer (and time taken) to each challenge part.
 
 
 ## TODO
 * improve singular day running `poetry run YYYY-DD` from function
+* possibly run timing iteratively
+* possibly graph timing for each day's solutions
