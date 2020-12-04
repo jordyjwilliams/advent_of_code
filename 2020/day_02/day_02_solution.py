@@ -1,5 +1,6 @@
 """ Solution to Day 02 of Advent of Code 2020 """
 from pathlib import Path
+import timeit
 import typing as ty
 
 DATA_PATH = Path.resolve(Path(__file__).parent)
@@ -41,6 +42,7 @@ def password_is_valid_part_2(
     return (first_char_val == sub_string) ^ (second_char_val == sub_string)
 
 
+START_TIME = timeit.default_timer()
 for line in DATA:
     line_data = split_line_of_file(line)
     if password_is_valid_part_1(*line_data):
@@ -49,7 +51,11 @@ for line in DATA:
         VALID_PASSWORDS_PART_2.append(line_data[0])
 
 PART_1_ANS = len(VALID_PASSWORDS_PART_1)
-print(f"Part 1:\n{PART_1_ANS} of {len(DATA)} passwords are valid\n")
-
 PART_2_ANS = len(VALID_PASSWORDS_PART_2)
+
+END_TIME_MS = (timeit.default_timer() - START_TIME) * 1000
+
+
+print(f"Part 1:\n{PART_1_ANS} of {len(DATA)} passwords are valid\n")
 print(f"Part 2:\n{PART_2_ANS} of {len(DATA)} passwords are valid\n")
+print(f"Timed Results:\nParts 1 & 2: {END_TIME_MS} ms\n")
