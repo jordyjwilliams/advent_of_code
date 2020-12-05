@@ -3,6 +3,8 @@
 
 Solutions to the [Advent of Code](https://adventofcode.com/) challenges.
 
+All problems can be found fully described [here](https://adventofcode.com/2020) as well as [previous years](https://adventofcode.com/2020/events).
+
 These solutions are not designed to be the fastest computationally. They are simply the first ones I thought of.
 
 
