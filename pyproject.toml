@@ -11,8 +11,15 @@ typing = "^3.7.4"
 
 [tool.poetry.dev-dependencies]
 black = "^20.8b1"
+pytest-pylint = "^0.18.0"
 pytest = "^6.1.2"
-pylint = "^2.6.0"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--pylint ./2020/"
+
+[tool.pylint.message_control]
+disable="line-too-long"
 
 [tool.poetry.scripts]
 lint = "poetry_utils:run_lint"
