@@ -5,14 +5,18 @@ import importlib.util
 import sys
 from pathlib import Path
 import subprocess
-from pylint import lint
-
-MINIMUM_LINTER_SCORE = 10
+import pytest
 
 
 def exit_on_result(success):
     """Shutdown with correct exit code"""
     return sys.exit(0) if success else sys.exit(1)
+
+
+def run_lint():
+    """run linting using pytest-pylint"""
+    args = ["-m", "pylint", "./2020/"]
+    exit_on_result(pytest.main(args) == pytest.ExitCode.OK)
 
 
 def run_black(check_only=True):
@@ -21,12 +25,6 @@ def run_black(check_only=True):
     if check_only:
         args.append("--check")
     return subprocess.run(args, check=False)
-
-
-def run_lint():
-    """Invoke pylint programmatically"""
-    run = lint.Run(["./2020/"], do_exit=False)
-    exit_on_result(run.linter.stats["global_note"] >= MINIMUM_LINTER_SCORE)
 
 
 def check_format():
