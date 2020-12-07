@@ -1,5 +1,6 @@
 """ Solution to Day 07 of Advent of Code 2020 """
 from pathlib import Path
+import re
 import typing as ty
 import timeit
 from collections import defaultdict
@@ -20,19 +21,10 @@ def get_data_rules(
     for line in rules_list:
         split_line = line.split(" contain ")
         main_bag = split_line[0].replace(" bags", "")
-        parts = (
-            split_line[1]
-            .replace(" bags", "")
-            .replace(" bag", "")
-            .replace(".", "")
-            .split(",")
-        )
-        for bag in parts:
-            bag = bag.strip()
-            if bag[0].isdigit():
-                number_bags, color = int(bag[0]), bag[2:]
-            else:
-                number_bags, color = 0, None
+        contained_bags = re.findall(r"(\d+) ([a-z ]+) [bag|bags,. ]+", split_line[1])
+
+        for bag in contained_bags:
+            number_bags, color = int(bag[0]), bag[1]
             contained_in[color].append(main_bag)
             contains[main_bag].append((number_bags, color))
     return contained_in, contains
@@ -43,7 +35,7 @@ def get_colors_contained(
     col: str, contained_in: ty.List, color_dict: ty.DefaultDict[str, bool]
 ) -> ty.DefaultDict[str, bool]:
     """recursively find and store input color_dict
-    color_dict should initially be empty dict
+    color_dict should initially be empty default dict of list type
     """
     for color in contained_in[col]:
         color_dict[color] = True
