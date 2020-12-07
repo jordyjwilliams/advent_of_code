@@ -7,7 +7,6 @@ All problems can be found fully described [here](https://adventofcode.com/2020) 
 
 These solutions are not designed to be the fastest computationally. They are simply the first ones I thought of.
 
-
 ## Dependencies
 
 These solutions use [Poetry](https://poetry.eustace.io/) for packaging and dependencies:
@@ -52,3 +51,4 @@ Each solution script prints the answer (and time taken) to each challenge part.
 * improve singular day running `poetry run YYYY-DD` from function
 * possibly run timing iteratively
 * possibly graph timing for each day's solutions
+* improve docstrings to `np` standard
