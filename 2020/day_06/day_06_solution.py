@@ -11,12 +11,34 @@ with open(Path.joinpath(DATA_PATH, "input.txt")) as input_file:
 
 # Data analysis functions
 def group_count_yes_anyone(group_str: str) -> int:
-    """Counts number of different questions answered yes by anyone in a group"""
+    """Counts number of different questions answered yes by anyone in a group
+
+    Parameters
+    ----------
+    group_str : str
+        sting of group answers, seperated by newline
+
+    Returns
+    -------
+    number_yes_in_group : int
+        number of yes answers for anyone in group
+    """
     return len(set(group_str.replace("\n", "")))
 
 
 def group_count_yes_everyone(group_str: str) -> int:
-    """Counts number of different questions answered yes by everyone in a group"""
+    """Counts number of different questions answered yes by everyone in a group
+
+    Parameters
+    ----------
+    group_str : str
+        sting of group answers, seperated by newline
+
+    Returns
+    -------
+    number_all_yes_in_group : int
+        number of yes answers for everyone in group
+    """
     group_size = len(group_str.split("\n"))
     combined_str = group_str.replace("\n", "")
     unique_chars = "".join(set(combined_str))

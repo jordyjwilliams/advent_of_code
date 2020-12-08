@@ -15,7 +15,23 @@ with open(Path.joinpath(DATA_PATH, "input.txt")) as input_file:
 def get_numbers_that_sum(
     data: ty.List[int], numbers_that_sum: int = 2, target_sum: int = 2020
 ) -> ty.List[int]:
-    """ Returns a list of numbers_that_sum which sum to target_sum """
+    """Calculate a list of numbers which sum to target sum
+
+    Parameters
+    ----------
+    data : list
+        list of integers
+    numbers_that_sum : int, optional
+        how many numbers to sum, (default=2)
+    target_sum : int, optional
+        target sum of numbers, (default=2020)
+
+    Returns
+    -------
+    numbers_summing_to_target : list
+        list of tuples (of length numbers_that_sum)
+        summing to target_sum
+    """
     return [
         comb for comb in combinations(data, numbers_that_sum) if sum(comb) == target_sum
     ]

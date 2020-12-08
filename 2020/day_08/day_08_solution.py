@@ -16,8 +16,33 @@ def run_instruction(
     instruction: str, current_idx: int, arg: int, accumulator: int
 ) -> ty.Tuple[int, int]:
     """run instruction given by string
-    returns modified current_idx, accumulator dependent on instruction
-    raises ValueError if instruction not supported
+
+    Parameters
+    ----------
+    instruction : str
+        instruction, line of input
+    current_idx : int
+        current index values
+    arg : int
+        argument from input
+    accumulator : int
+        accumulator value - to be updated
+
+    Returns
+    -------
+    current_idx : int
+        modified current index after instruction
+    accumulator : int
+        modified accumulator after instruction
+
+    Raises
+    ------
+    ValueError if instruction not supported
+
+    Notes
+    -----
+    * dependent on instruction not all values may be modified
+    * current operations are hardcoded
     """
     if instruction not in OPERATIONS:
         raise ValueError(f"Instruction must be one of {OPERATIONS}")
@@ -32,11 +57,26 @@ def run_instruction(
 
 def run_loop(data: ty.List[str]) -> ty.Tuple[int, int, bool]:
     """Run loop for list of boot code strings
+
+    Parameters
+    ----------
+    data : list
+        list of input boot codes
+
+    Returns
+    -------
+    accumulator : int
+        accumulator value
+    current_index : int
+        current index on loop exit
+    complete_boot_loop : bool
+        if loop completed
+
+    Notes
+    -----
     Will run until:
         * complete (run idx same as length of data)
         * or the same instruction is ran twice (boot loop)
-    Returns
-    accumulator, current_index, complete_boot_loop
     """
     accumulator = 0
     current_idx = 0

@@ -16,7 +16,18 @@ with open(Path.joinpath(DATA_PATH, "input.txt")) as input_file:
 
 # Data analysis functions - binary conversion
 def get_row_and_column(seat_str: str) -> int:
-    """Gets row and column from seat data is binary int"""
+    """Gets row and column from seat data is binary int
+
+    Parameters
+    ----------
+    seat_str : str
+        of format specified in challenge
+
+    Returns
+    -------
+    binary_int : int
+        binary int of mapped data
+    """
     seat_str = seat_str.translate(str.maketrans(BINARY_MAPPING))
     return int(seat_str, 2)
 
@@ -24,6 +35,16 @@ def get_row_and_column(seat_str: str) -> int:
 def get_seat_id(all_ids: ty.List[int]) -> int:
     """Gets missing ID from list of all IDs
     Assumes only one missing number returns None no seat
+
+    Parameters
+    ----------
+    all_ids : list
+        list of input integers
+
+    Returns
+    -------
+    assigned_seat_id : int
+        seat_id from missing seat IDs
     """
     assigned_seat_id = None
     for seat_id in all_ids:

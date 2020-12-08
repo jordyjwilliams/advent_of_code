@@ -25,10 +25,27 @@ with open(Path.joinpath(DATA_PATH, "input.txt")) as input_file:
 def count_number_trees_hit_in_path(
     data: ty.List, num_right: int = 3, num_down: int = 1
 ) -> int:
-    """Counts number of trees hit in a downward/right
-    traverse path.
+    """Counts number of trees hit in a traverse path.
 
-    Assumes all rows loop -> and Tree is # symbol
+    Parameters
+    ----------
+    data : list
+        list of strings containing terrain data
+    num_right : int, optional
+        how many indices to move right each step, (default=3)
+    num_down : int, optional
+        how many indices to move down each step, (default=1)
+
+    Returns
+    -------
+    num_trees_hit : int
+        how many times tree occurred in path
+
+    Notes
+    -----
+    Assumes:
+    * all rows loop
+    * tree is # symbol
     """
     # Define start position in top left
     right_start = down_start = num_trees = 0

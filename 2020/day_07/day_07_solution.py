@@ -15,8 +15,21 @@ with open(Path.joinpath(DATA_PATH, "input.txt")) as input_file:
 # Data parsing functions
 def get_data_rules(
     rules_list: ty.List[str],
-) -> ty.Tuple[ty.DefaultDict, ty.DefaultDict]:
-    """splits data into contained by and contains dicts"""
+) -> ty.Tuple[
+    ty.DefaultDict[str, ty.List[str]], ty.DefaultDict[str, ty.List[ty.Tuple[int, str]]]
+]:
+    """Splits data into contained by and contains dicts
+
+    Parameters
+    ----------
+    rules_list : list
+        list of rules from input file
+
+    Returns
+    -------
+    contaiend_in, contains : tuple
+        dicts with lists of color ID's
+    """
     contained_in, contains = defaultdict(list), defaultdict(list)
     for line in rules_list:
         split_line = line.split(" contain ")
@@ -32,10 +45,25 @@ def get_data_rules(
 
 # Data analysis
 def get_colors_contained(
-    col: str, contained_in: ty.List, color_dict: ty.DefaultDict[str, bool]
-) -> ty.DefaultDict[str, bool]:
+    col: str,
+    contained_in: ty.DefaultDict[str, ty.List[ty.Tuple[int, str]]],
+    color_dict: ty.Dict[str, bool],
+) -> ty.Dict[str, bool]:
     """recursively find and store input color_dict
-    color_dict should initially be empty default dict of list type
+
+    Parameters
+    ----------
+    col : str
+        bag color
+    contained_in : DefaultDict
+        contained_in from get_data_rules
+    color_dict : DefaultDict
+        empty default dict (initially), to be recursively filled
+
+    Returns
+    -------
+    color_dict : dict
+        color stings, bool key
     """
     for color in contained_in[col]:
         color_dict[color] = True
@@ -47,7 +75,20 @@ def get_colors_contained(
 def get_sum(
     col: str, contains: ty.DefaultDict[str, ty.List[ty.Tuple[int, str]]]
 ) -> int:
-    """ recursively gets sum of all bags contained within other bags """
+    """recursively gets sum of all bags contained within other bags
+
+    Parameters
+    ----------
+    col : str
+        bag color
+    contains : DefaultDict
+        contained from get_data_rules
+
+    Returns
+    -------
+    sum_contained : int
+        amount of bags contained within col bag
+    """
     values = []
     for contained_bag in contains[col]:
         if contained_bag[1] in contains:

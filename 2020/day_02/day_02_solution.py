@@ -11,9 +11,18 @@ with open(Path.joinpath(DATA_PATH, "input.txt")) as input_file:
     DATA = input_file.readlines()
 
 
-def split_line_of_file(input_line: str) -> ty.Tuple:
+def split_line_of_file(input_line: str) -> ty.Tuple[str, str, int, int]:
     """Splits string from input file.
-    Returns tuple of password, substring, min_number, max_number
+
+    Parameters
+    -----------
+    input_line : str
+        line from input data
+
+    Returns
+    -------
+    data : tuple
+        password, letter, min_number, max_number
     """
     min_max_str, letter_str, password = input_line.replace("\n", "").split(" ")
     min_number, max_number = min_max_str.split("-")
@@ -24,7 +33,24 @@ def split_line_of_file(input_line: str) -> ty.Tuple:
 def password_is_valid_part_1(
     password: str, sub_string: str, min_number: int, max_number: int
 ) -> bool:
-    """ Returns bool if password is valid for part 1 """
+    """Checks if password is valid for part 1 criteria
+
+    Parameters
+    ----------
+    password : str
+        password to check
+    sub_string : str
+        letter or substring which must be in password
+    min_number : int
+        minimum number of times sub_string must occur
+    max_number : int
+        maximmum number of times sub_string can occur
+
+    Returns
+    -------
+    valid : bool
+        if password is valid
+    """
     num_occurrences = password.count(sub_string)
     return min_number <= num_occurrences <= max_number
 
@@ -33,7 +59,27 @@ def password_is_valid_part_2(
     password: str, sub_string: str, first_char_idx: int, second_char_idx: int
 ) -> bool:
     """Returns bool if password is valid for part 2
-    Idx values are assumed to start at 0 (will be altered here)
+
+    Parameters
+    ----------
+    password : str
+        password to check
+    sub_string : str
+        letter or substring which must be in password
+    first_char_idx : int
+        position where sub_string must occur once
+    second_char_idx : int
+        position where sub_string must occur once
+
+    Returns
+    -------
+    valid : bool
+        if password is valid
+
+    Notes
+    -----
+    * Index values are assumed to start at 0 (will be altered here)
+    * Substring must only occur once at first_char_idx or second_char_idx
     """
     first_char_val, second_char_val = (
         password[first_char_idx - 1],
