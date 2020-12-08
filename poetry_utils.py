@@ -8,7 +8,7 @@ import subprocess
 import pytest
 
 
-def exit_on_result(success):
+def exit_on_result(success: bool):
     """Shutdown with correct exit code"""
     return sys.exit(0) if success else sys.exit(1)
 
@@ -19,7 +19,7 @@ def run_lint():
     exit_on_result(pytest.main(args) == pytest.ExitCode.OK)
 
 
-def run_black(check_only=True):
+def run_black(check_only: bool = True):
     """run black"""
     args = ["black", "."]
     if check_only:
@@ -42,6 +42,8 @@ def run_all_days():
     # year, day dir structure
     solution_files = glob("./*/*/*solution*.py")
     for solution in solution_files:
+        if 'day_xx' in solution:
+            break
         print(f"{solution}\n")
         # Hacky importing the solution module as will print answer
         mod_spec = importlib.util.spec_from_file_location("sol", solution)
