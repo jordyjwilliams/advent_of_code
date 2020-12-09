@@ -3,9 +3,13 @@
 
 Solutions to the [Advent of Code](https://adventofcode.com/) challenges.
 
+Puzzle descriptions have not been shared in this repo. This is [per request](https://www.reddit.com/r/adventofcode/comments/k99rod/sharing_input_data_were_we_requested_not_to/) from [the AoC creator](https://github.com/topaz) and many others over countless threads [here](https://www.reddit.com/r/adventofcode/).
+
 All problems can be found fully described [here](https://adventofcode.com/2020) as well as [previous years](https://adventofcode.com/2020/events).
 
 These solutions are not designed to be the fastest computationally. They are simply the first ones I thought of.
+
+
 
 ## Dependencies
 
@@ -51,4 +55,3 @@ Each solution script prints the answer (and time taken) to each challenge part.
 * improve singular day running `poetry run YYYY-DD` from function
 * possibly run timing iteratively
 * possibly graph timing for each day's solutions
-* improve docstrings to `np` standard
