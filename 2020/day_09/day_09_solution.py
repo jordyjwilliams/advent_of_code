@@ -49,12 +49,14 @@ PART_1_TIME_MS = (timeit.default_timer() - PART_1_START_TIME) * 1000
 
 PART_2_START_TIME = timeit.default_timer()
 
-for search_size in range(2, len(DATA)):
-    for idx, _ in enumerate(DATA[:-search_size]):
-        DATA_RANGE = DATA[idx : idx + search_size]
-        if sum(DATA_RANGE) == PART_1_ANS:
-            PART_2_LIST = DATA_RANGE
-            break
+DATA_BEFORE_PART_1_ANS = DATA[:PART_1_IDX]
+for search_size in range(2, len(DATA_BEFORE_PART_1_ANS)):
+    for idx, _ in enumerate(DATA_BEFORE_PART_1_ANS[:-search_size]):
+        DATA_RANGE = DATA_BEFORE_PART_1_ANS[idx : idx + search_size]
+        if sum(DATA_RANGE) != PART_1_ANS:
+            continue
+        PART_2_LIST = DATA_RANGE
+        break
 
 PART_2_ANS = min(PART_2_LIST) + max(PART_2_LIST)
 PART_2_TIME_MS = (timeit.default_timer() - PART_2_START_TIME) * 1000
