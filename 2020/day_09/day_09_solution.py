@@ -14,7 +14,7 @@ with open(Path.joinpath(DATA_PATH, "input.txt")) as input_file:
 
 
 def is_valid(current_input: int, previous_numbers: ty.List[int]):
-    """ Checks if input is valid depending on a previous numbers
+    """Checks if input is valid depending on a previous numbers
 
     Parameters
     ----------
@@ -29,12 +29,11 @@ def is_valid(current_input: int, previous_numbers: ty.List[int]):
         if a combination of 2 (or more) previous numbers sums to
         current input
     """
-    # pylint:disable=fixme
-    # TODO: time difference between this way and breaking in a for loop...
     numbers_that_sum = [
         comb for comb in combinations(previous_numbers, 2) if sum(comb) == current_input
     ]
     return bool(numbers_that_sum)
+
 
 # Answers
 PART_1_START_TIME = timeit.default_timer()
