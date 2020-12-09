@@ -42,7 +42,7 @@ def run_all_days():
     # year, day dir structure
     solution_files = glob("./*/*/*solution*.py")
     for solution in solution_files:
-        if 'day_xx' in solution:
+        if "day_xx" in solution:
             break
         print(f"{solution}\n")
         # Hacky importing the solution module as will print answer
