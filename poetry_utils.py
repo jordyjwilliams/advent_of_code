@@ -8,7 +8,6 @@ import subprocess
 import pytest
 
 
-
 def exit_on_result(success: bool):
     """Shutdown with correct exit code"""
     return sys.exit(0) if success else sys.exit(1)
@@ -50,9 +49,11 @@ def run_all_days():
         mod_spec = importlib.util.spec_from_file_location("sol", solution)
         module = importlib.util.module_from_spec(mod_spec)
         mod_spec.loader.exec_module(module)
-        print(f"Part 1:\n{module.PART_1_ANS}\n")
-        print(f"Part 2:\n{module.PART_2_ANS}\n")
-        print(
-            f"Timed Results:\nPart 1: {module.PART_1_TIME_MS:.3f} ms\nPart 2: {module.PART_2_TIME_MS:.3f} ms\n"
-        )
-
+        try:
+            print(f"Part 1:\n{module.PART_1_ANS}\n")
+            print(f"Part 2:\n{module.PART_2_ANS}\n")
+            print(
+                f"Timed Results:\nPart 1: {module.PART_1_TIME_MS:.3f} ms\nPart 2: {module.PART_2_TIME_MS:.3f} ms\n"
+            )
+        except AttributeError:
+            print("One of the required variable names is not preset")
