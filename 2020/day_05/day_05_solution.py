@@ -67,9 +67,9 @@ PART_2_START_TIME = timeit.default_timer()
 PART_2_ANS = get_seat_id(ALL_SEAT_IDS)
 PART_2_TIME_MS = (timeit.default_timer() - PART_2_START_TIME) * 1000
 
-
-print(f"Part 1:\n{PART_1_ANS} 🛫 max seat number\n")
-print(f"Part 2:\n{PART_2_ANS} 🛫 seat ID\n")
-print(
-    f"Timed Results:\nPart 1: {PART_1_TIME_MS:.3f} ms\nPart 2: {PART_2_TIME_MS:.3f} ms\n"
+if __name__ == "__main__":
+    print(f"Part 1:\n{PART_1_ANS} 🛫 max seat number\n")
+    print(f"Part 2:\n{PART_2_ANS} 🛫 seat ID\n")
+    print(
+        f"Timed Results:\nPart 1: {PART_1_TIME_MS:.3f} ms\nPart 2: {PART_2_TIME_MS:.3f} ms\n"
 )

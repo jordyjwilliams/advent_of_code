@@ -113,9 +113,10 @@ PART_2_START_TIME = timeit.default_timer()
 PART_2_ANS = get_sum(TARGET_KEY, CONTAINS)
 PART_2_TIME_MS = (timeit.default_timer() - PART_2_START_TIME) * 1000
 
-print(f"Part 1:\n{PART_1_ANS} 🧳 bags can contain 🥇 bag\n")
-print(f"Part 2:\n{PART_2_ANS} 🧳 bags required in 🥇 bag\n")
+if __name__ == "__main__":
+    print(f"Part 1:\n{PART_1_ANS} 🧳 bags can contain 🥇 bag\n")
+    print(f"Part 2:\n{PART_2_ANS} 🧳 bags required in 🥇 bag\n")
 
-print(
-    f"Timed Results:\nPart 1: {PART_1_TIME_MS:.3f} ms\nPart 2: {PART_2_TIME_MS:.3f} ms\n"
+    print(
+        f"Timed Results:\nPart 1: {PART_1_TIME_MS:.3f} ms\nPart 2: {PART_2_TIME_MS:.3f} ms\n"
 )
