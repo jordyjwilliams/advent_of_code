@@ -1,5 +1,5 @@
 # Advent of Code
-![Language (Python)](https://img.shields.io/badge/powered_by-Python-blue.svg?style=flat) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+![Language (Python)](https://img.shields.io/badge/powered_by-Python-blue.svg?style=flat) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
 
 Solutions to the [Advent of Code](https://adventofcode.com/) challenges.
 
@@ -31,15 +31,17 @@ poetry install
 
 - `pylint`
 - `black`
+- `isort`
 
 ## Poetry scripts
 
 ```bash
-poetry run lint                                     # run pylint
-poetry run format                                   # run black formatter on files
-poetry run check_format                             # check formatting
-poetry run python ./YYYY/day_XX/day_XX_solution.py  # run solution for given year/day
-poetry run all_solutions                            # run all year(s) code solutions
+poetry run lint                                     # Runs: pylint
+poetry run format                                   # Runs: isort & Black formatting on files
+poetry run check_format                             # Checks: Black formatting
+poetry run check_isort                              # Checks: isort formatter on files
+poetry run python ./YYYY/day_XX/day_XX_solution.py  # Runs: solution for given year/day
+poetry run all_solutions                            # Runs: all year(s) code solutions
 ```
 
 ## Structure
