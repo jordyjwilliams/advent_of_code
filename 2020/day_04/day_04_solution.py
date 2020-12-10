@@ -1,7 +1,7 @@
 """ Solution to Day 04 of Advent of Code 2020 """
-from pathlib import Path
-import typing as ty
 import timeit
+import typing as ty
+from pathlib import Path
 
 # Constants
 DATA_PATH = Path.resolve(Path(__file__).parent)

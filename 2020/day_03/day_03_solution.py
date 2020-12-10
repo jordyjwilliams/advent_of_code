@@ -1,7 +1,8 @@
 """ Solution to Day 03 of Advent of Code 2020 """
-from pathlib import Path
-import typing as ty
 import timeit
+import typing as ty
+from pathlib import Path
+
 import numpy as np
 
 DATA_PATH = Path.resolve(Path(__file__).parent)

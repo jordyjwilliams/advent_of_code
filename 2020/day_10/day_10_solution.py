@@ -1,7 +1,7 @@
 """ Solution to Day 10 of Advent of Code 2020 """
-from pathlib import Path
-import timeit
 import collections
+import timeit
+from pathlib import Path
 
 # Constants
 DATA_PATH = Path.resolve(Path(__file__).parent)

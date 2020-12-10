@@ -1,7 +1,7 @@
 """ Solution to Day 02 of Advent of Code 2020 """
-from pathlib import Path
 import timeit
 import typing as ty
+from pathlib import Path
 
 DATA_PATH = Path.resolve(Path(__file__).parent)
 VALID_PASSWORDS_PART_1 = []

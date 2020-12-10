@@ -1,9 +1,10 @@
 """ Solution to Day 01 of Advent of Code 2020 """
 
-from itertools import combinations
-import typing as ty
-from pathlib import Path
 import timeit
+import typing as ty
+from itertools import combinations
+from pathlib import Path
+
 import numpy as np
 
 DATA_PATH = Path.resolve(Path(__file__).parent)

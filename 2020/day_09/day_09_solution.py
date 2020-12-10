@@ -1,8 +1,8 @@
 """ Solution to Day 09 of Advent of Code 2020 """
-from pathlib import Path
-from itertools import combinations
-import typing as ty
 import timeit
+import typing as ty
+from itertools import combinations
+from pathlib import Path
 
 # Constants
 DATA_PATH = Path.resolve(Path(__file__).parent)
