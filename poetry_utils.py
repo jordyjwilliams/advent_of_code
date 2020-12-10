@@ -27,13 +27,29 @@ def run_black(check_only: bool = True):
     return subprocess.run(args, check=False)
 
 
+def run_isort(check_only: bool = True):
+    """run isort"""
+    args = ["isort", "."]
+    if check_only:
+        args.append("--diff")
+    return subprocess.run(args, check=False)
+
+
 def check_format():
     """Invoke Black to check formatting"""
     exit_on_result(run_black(check_only=True).returncode == 0)
 
 
+def check_isort():
+    """Invoke Black to check formatting"""
+    exit_on_result(run_isort(check_only=True).returncode == 0)
+
+
 def run_format():
-    """Invoke Black to apply formatting"""
+    """Invoke isort and Black to apply formatting"""
+    print("Running isort\n")
+    run_isort(check_only=False)
+    print("Running Black\n")
     exit_on_result(run_black(check_only=False).returncode == 0)
 
 

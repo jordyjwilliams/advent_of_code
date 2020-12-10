@@ -13,6 +13,7 @@ typing = "^3.7.4"
 black = "^20.8b1"
 pytest-pylint = "^0.18.0"
 pytest = "^6.1.2"
+isort = "^5.6.4"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
@@ -24,8 +25,13 @@ disable="line-too-long"
 [tool.poetry.scripts]
 lint = "poetry_utils:run_lint"
 format = "poetry_utils:run_format"
+check_isort = "poetry_utils:check_isort"
 check_format = "poetry_utils:check_format"
 all_solutions = "poetry_utils:run_all_days"
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
