@@ -7,7 +7,7 @@ DATA_PATH = Path.resolve(Path(__file__).parent)
 VALID_PASSWORDS_PART_1 = []
 VALID_PASSWORDS_PART_2 = []
 
-with open(Path.joinpath(DATA_PATH, "input.txt")) as input_file:
+with open(DATA_PATH / "input.txt") as input_file:
     DATA = input_file.readlines()
 
 

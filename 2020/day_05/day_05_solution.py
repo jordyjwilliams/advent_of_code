@@ -11,7 +11,7 @@ RANGES = {"row": 127, "column": 7}
 ROW_DATA = ["F", "B"]
 COL_DATA = ["R", "L"]
 
-with open(Path.joinpath(DATA_PATH, "input.txt")) as input_file:
+with open(DATA_PATH / "input.txt") as input_file:
     DATA = input_file.readlines()
 
 # Data analysis functions - binary conversion

@@ -7,7 +7,7 @@ import timeit
 DATA_PATH = Path.resolve(Path(__file__).parent)
 OPERATIONS = ["acc", "jmp", "nop"]
 
-with open(Path.joinpath(DATA_PATH, "input.txt")) as input_file:
+with open(DATA_PATH / "input.txt") as input_file:
     DATA = input_file.readlines()
 
 

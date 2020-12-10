@@ -8,7 +8,7 @@ DATA_PATH = Path.resolve(Path(__file__).parent)
 REQUIRED_KEYS = {"byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"}
 OPTIONAL_KEYS = {"cid"}
 
-with open(Path.joinpath(DATA_PATH, "input.txt")) as input_file:
+with open(DATA_PATH / "input.txt") as input_file:
     DATA = input_file.read()
 
 # Data splitting functions

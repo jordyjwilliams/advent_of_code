@@ -7,7 +7,7 @@ import collections
 DATA_PATH = Path.resolve(Path(__file__).parent)
 
 # read data line by line
-with open(Path.joinpath(DATA_PATH, "input.txt")) as input_file:
+with open(DATA_PATH / "input.txt") as input_file:
     DATA = [int(line) for line in input_file.readlines()]
 
 
