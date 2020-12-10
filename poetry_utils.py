@@ -8,6 +8,7 @@ import subprocess
 import pytest
 
 
+
 def exit_on_result(success: bool):
     """Shutdown with correct exit code"""
     return sys.exit(0) if success else sys.exit(1)
@@ -40,11 +41,18 @@ def run_format():
 def run_all_days():
     """ Runner to run all day solutions """
     # year, day dir structure
+    print("Note: Run each solution separatelyor more detailed print statements")
     solution_files = glob("./*/*/*solution*.py")
-    for solution in solution_files:
+    for solution in sorted(solution_files):
         if "day_xx" in solution:
             break
         print(f"{solution}\n")
-        # Hacky importing the solution module as will print answer
         mod_spec = importlib.util.spec_from_file_location("sol", solution)
-        module = mod_spec.loader.exec_module(importlib.util.module_from_spec(mod_spec))
+        module = importlib.util.module_from_spec(mod_spec)
+        mod_spec.loader.exec_module(module)
+        print(f"Part 1:\n{module.PART_1_ANS}\n")
+        print(f"Part 2:\n{module.PART_2_ANS}\n")
+        print(
+            f"Timed Results:\nPart 1: {module.PART_1_TIME_MS:.3f} ms\nPart 2: {module.PART_2_TIME_MS:.3f} ms\n"
+        )
+
