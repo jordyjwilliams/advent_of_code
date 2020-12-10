@@ -34,7 +34,7 @@ poetry install
 
 ## Poetry scripts
 
-```
+```bash
 poetry run lint                                     # run pylint
 poetry run format                                   # run black formatter on files
 poetry run check_format                             # check formatting
@@ -48,7 +48,15 @@ This repository has the following structure:
 
 Where each day contains an `input.txt` and a `day_xx_solution.py`.
 
-Each solution script prints the answer (and time taken) to each challenge part.
+When executed, each solution script prints the answer (and time taken) to each challenge part.
+
+### Note
+
+In order for `poetry run all_solutions` function to work properly the following variables must be preset:
+* `PART_1_ANS`, `PART_2_ANS`
+* `PART_1_TIME_MS`, `PART_2_TIME_MS`
+
+If these are not, there will be no error (failsafe) rather the day solutions will just not print
 
 
 ## TODO
