@@ -45,12 +45,10 @@ def number_occupied(
     * assumes 3x3 search size
     * number of instances includes the current position
     """
-    row_search_idx = current_row_idx - 1, current_row_idx + 2
-    col_search_idx = current_col_idx - 1, current_col_idx + 2
-    row_search_data = seat_lines[row_search_idx[0] : row_search_idx[1]]
+    row_search_data = seat_lines[current_row_idx - 1 : current_row_idx + 2]
     return sum(
         [
-            col[col_search_idx[0] : col_search_idx[1]].count("#")
+            col[current_col_idx - 1 : current_col_idx + 2].count("#")
             for col in row_search_data
         ]
     )
