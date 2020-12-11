@@ -17,7 +17,7 @@ isort = "^5.6.4"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "--pylint ./2020/"
+addopts = "--pylint ./2020/ ./ --pylint-jobs=4"
 
 [tool.pylint.message_control]
 disable="line-too-long"

@@ -1,10 +1,8 @@
 """Utility & CLI functions"""  # pylint:disable-msg=C0415
 import importlib.util
-import os
 import subprocess
 import sys
 from glob import glob
-from pathlib import Path
 
 import pytest
 
