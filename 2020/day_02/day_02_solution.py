@@ -104,6 +104,6 @@ END_TIME_MS = (timeit.default_timer() - START_TIME) * 1000
 PART_1_TIME_MS = PART_2_TIME_MS = END_TIME_MS  # hack for poetry_utils.py
 
 if __name__ == "__main__":
-    print(f"Part 1:\n{PART_1_ANS} of {len(DATA)} passwords are valid\n")
-    print(f"Part 2:\n{PART_2_ANS} of {len(DATA)} passwords are valid\n")
+    print(f"{PART_1_ANS=} of {len(DATA)} passwords are valid\n")
+    print(f"{PART_2_ANS=} of {len(DATA)} passwords are valid\n")
     print(f"Timed Results:\nParts 1 & 2: {END_TIME_MS} ms\n")

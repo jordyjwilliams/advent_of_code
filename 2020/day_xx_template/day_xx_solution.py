@@ -27,9 +27,9 @@ PART_2_ANS = "CALCULATE THIS"
 PART_2_TIME_MS = (timeit.default_timer() - PART_2_START_TIME) * 1000
 
 if __name__ == "__main__":
-    print(f"Part 1:\n{PART_1_ANS}\n")
-    print(f"Part 2:\n{PART_2_ANS}\n")
+    print(f"{PART_1_ANS=}\n")
+    print(f"{PART_2_ANS=}\n")
 
     print(
-        f"Timed Results:\nPart 1: {PART_1_TIME_MS:.3f} ms\nPart 2: {PART_2_TIME_MS:.3f} ms\n"
+        f"Timed Results:\n{PART_1_TIME_MS:.3f=}\n{PART_2_TIME_MS:.3f=}\n"
     )
