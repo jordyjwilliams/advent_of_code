@@ -50,7 +50,7 @@ def get_manhattan_distance(location: complex) -> int:
     Parameters
     ----------
     location : complex
-        direction in complex co-coordinateses
+        direction in complex co-coordinates
 
     Returns
     -------
