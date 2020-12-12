@@ -82,7 +82,8 @@ PART_1_ANS = get_manhattan_distance(PART_1_LOCATION)
 PART_1_TIME_MS = (timeit.default_timer() - PART_1_START_TIME) * 1000
 
 PART_2_START_TIME = timeit.default_timer()
-PART_2_ANS = "CALCULATE THIS"
+PART_2_LOCATION, PART_2_DIRECTION = run_path(DATA, start_waypoint=(10 + 1j))
+PART_2_ANS = get_manhattan_distance(PART_2_LOCATION)
 PART_2_TIME_MS = (timeit.default_timer() - PART_2_START_TIME) * 1000
 
 if __name__ == "__main__":
