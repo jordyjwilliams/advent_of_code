@@ -21,7 +21,7 @@ poetry install --no-dev
 
 - `numpy`
 
-These solutions require a version of `Python >= 3.7`
+These solutions require a version of `Python >= 3.8`
 
 ### Development dependencies
 

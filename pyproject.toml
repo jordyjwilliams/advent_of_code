@@ -5,7 +5,7 @@ description = "Advent of Code 2020 Solutions"
 authors = ["Jordy Williams <jordy_williams@hotmail.co.uk>"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 numpy = "^1.19.4"
 typing = "^3.7.4"
 
