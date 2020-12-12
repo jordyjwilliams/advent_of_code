@@ -11,18 +11,22 @@ with open(DATA_PATH / "input.txt") as input_file:
 
 
 # Part one
-def run_path(instructions: ty.List[ty.Tuple[str, int]]) -> ty.Tuple[complex, complex]:
+def run_path(
+    instructions: ty.List[ty.Tuple[str, int]], start_waypoint: complex = None
+) -> ty.Tuple[complex, complex]:
     """Runs instructions from a list of tuples
 
     Parameters
     ----------
     instructions : list
         list of operation (str) and amount (int) values
+    start_waypoint : complex, optional
+        starting waypoint, default=None (Part 1)
 
     Returns
     -------
     position : tuple
-        of location and direction values
+        of location and waypoint value
 
     Notes
     -----
@@ -33,15 +37,23 @@ def run_path(instructions: ty.List[ty.Tuple[str, int]]) -> ty.Tuple[complex, com
     directions = {"N": 1j, "E": 1, "S": -1j, "W": -1}
     rotations = {"L": 1j, "R": -1j}
     location = 0
-    direction = 1
+    if start_waypoint is None:
+        waypoint = False
+        start_waypoint = 1
+    else:
+        waypoint = True
+
     for operation, amount in instructions:
         if operation in directions:
-            location += directions[operation] * amount
+            if waypoint:
+                start_waypoint += directions[operation] * amount
+            else:
+                location += directions[operation] * amount
         elif operation in rotations:
-            direction *= rotations[operation] ** (amount / 90)
+            start_waypoint *= rotations[operation] ** (amount / 90)
         else:
-            location += direction * amount
-    return location, direction
+            location += start_waypoint * amount
+    return location, start_waypoint
 
 
 def get_manhattan_distance(location: complex) -> int:
