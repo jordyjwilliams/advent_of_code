@@ -42,6 +42,4 @@ if __name__ == "__main__":
     print(f"{PART_1_ANS=} ⚡️ Jolts (1 Jolt * 3 Jolt)\n")
     print(f"{PART_2_ANS=} ⚡️ Combinations\n")
 
-    print(
-        f"Timed Results:\n{PART_1_TIME_MS=:.3f}\n{PART_2_TIME_MS=:.3f}\n"
-    )
+    print(f"Timed Results:\n{PART_1_TIME_MS=:.3f}\n{PART_2_TIME_MS=:.3f}\n")

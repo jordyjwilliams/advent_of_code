@@ -124,13 +124,7 @@ PART_2_ANS = ACC
 PART_2_TIME_MS = (timeit.default_timer() - PART_2_START_TIME) * 1000
 
 if __name__ == "__main__":
-    print(
-        f"{PART_1_ANS=} accumulator value. Idx: {BREAKS_AT_IDX} causes inf loop\n"
-    )
-    print(
-        f"{PART_2_ANS=} accumulator value. Changing idx: {MODIFY_INDEX} fixes\n"
-    )
+    print(f"{PART_1_ANS=} accumulator value. Idx: {BREAKS_AT_IDX} causes inf loop\n")
+    print(f"{PART_2_ANS=} accumulator value. Changing idx: {MODIFY_INDEX} fixes\n")
 
-    print(
-        f"Timed Results:\n{PART_1_TIME_MS=:.3f}\n{PART_2_TIME_MS=:.3f}\n"
-    )
+    print(f"Timed Results:\n{PART_1_TIME_MS=:.3f}\n{PART_2_TIME_MS=:.3f}\n")

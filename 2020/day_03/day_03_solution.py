@@ -72,6 +72,4 @@ if __name__ == "__main__":
     print(f"{PART_1_ANS=} 🎄 hit\n")
     print(f"Part 2:\n{PART_2_PER_SLOPE} 🎄 hit for {PART_2_SLOPES}")
     print(f"{PART_2_ANS=}\n")
-    print(
-        f"Timed Results:\n{PART_1_TIME_MS=:.3f}\n{PART_2_TIME_MS=:.3f}\n"
-    )
+    print(f"Timed Results:\n{PART_1_TIME_MS=:.3f}\n{PART_2_TIME_MS=:.3f}\n")

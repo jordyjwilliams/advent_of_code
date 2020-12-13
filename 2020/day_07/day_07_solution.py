@@ -117,6 +117,4 @@ if __name__ == "__main__":
     print(f"{PART_1_ANS=} 🧳 bags can contain 🥇 bag\n")
     print(f"{PART_2_ANS=} 🧳 bags required in 🥇 bag\n")
 
-    print(
-        f"Timed Results:\n{PART_1_TIME_MS=:.3f}\n{PART_2_TIME_MS=:.3f}\n"
-    )
+    print(f"Timed Results:\n{PART_1_TIME_MS=:.3f}\n{PART_2_TIME_MS=:.3f}\n")

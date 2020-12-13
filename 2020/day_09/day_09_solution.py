@@ -67,6 +67,4 @@ if __name__ == "__main__":
         f"{PART_2_ANS=} is the sum of the contiguous range of {len(PART_2_LIST)} numbers\n"
     )
 
-    print(
-        f"Timed Results:\n{PART_1_TIME_MS=:.3f}\n{PART_2_TIME_MS=:.3f}\n"
-    )
+    print(f"Timed Results:\n{PART_1_TIME_MS=:.3f}\n{PART_2_TIME_MS=:.3f}\n")

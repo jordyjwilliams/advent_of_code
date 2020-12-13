@@ -56,6 +56,4 @@ if __name__ == "__main__":
         f"Part 2:\nInts that sum are: {PART_2_INTS_TO_SUM}\nProduct is: {PART_2_ANS}\n"
     )
 
-    print(
-        f"Timed Results:\n{PART_1_TIME_MS=:.3f}\n{PART_2_TIME_MS=:.3f}\n"
-    )
+    print(f"Timed Results:\n{PART_1_TIME_MS=:.3f}\n{PART_2_TIME_MS=:.3f}\n")

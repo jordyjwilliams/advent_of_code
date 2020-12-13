@@ -90,6 +90,4 @@ if __name__ == "__main__":
     print(f"{PART_1_ANS=} Manhattan Distance from start position\n")
     print(f"{PART_2_ANS=} Manhattan Distance from start position\n")
 
-    print(
-        f"Timed Results:\n{PART_1_TIME_MS=:.3f}\n{PART_2_TIME_MS=:.3f}\n"
-    )
+    print(f"Timed Results:\n{PART_1_TIME_MS=:.3f}\n{PART_2_TIME_MS=:.3f}\n")
