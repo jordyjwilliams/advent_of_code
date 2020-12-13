@@ -20,6 +20,7 @@ poetry install --no-dev
 ```
 
 - `numpy`
+- `sympy`
 
 These solutions require a version of `Python >= 3.8`
 
