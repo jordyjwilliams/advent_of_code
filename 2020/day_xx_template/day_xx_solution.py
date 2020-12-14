@@ -19,11 +19,11 @@ with open(DATA_PATH / "input.txt") as input_file:
 
 # Answers
 PART_1_START_TIME = timeit.default_timer()
-PART_1_ANS = "CALCULATE THIS"
+PART_1_ANS = "TODO"
 PART_1_TIME_MS = (timeit.default_timer() - PART_1_START_TIME) * 1000
 
 PART_2_START_TIME = timeit.default_timer()
-PART_2_ANS = "CALCULATE THIS"
+PART_2_ANS = "TODO"
 PART_2_TIME_MS = (timeit.default_timer() - PART_2_START_TIME) * 1000
 
 if __name__ == "__main__":
