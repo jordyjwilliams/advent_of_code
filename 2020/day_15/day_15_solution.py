@@ -1,4 +1,5 @@
 """ Solution to Day 15 of Advent of Code 2020 """
+import collections
 import timeit
 import typing as ty
 
@@ -55,17 +56,20 @@ def get_idx_in_sequence(
         results : int
             final answer at target_index
     """
-    spoken_numbers = []
+    spoken_numbers = collections.defaultdict(list)
     for game_idx in range(target_seq_number):
         if game_idx < len(starting_numbers):
             result = starting_numbers[game_idx]
-        elif spoken_numbers[-1] not in spoken_numbers[:-2]:
+        elif len(spoken_numbers[last_spoken_number]) == 1:
             result = 0
         else:
-            times_appeared = get_last_elements(spoken_numbers, spoken_numbers[-1])
-            result = times_appeared[-1] - times_appeared[-2]
-        spoken_numbers.append(result)
-    return spoken_numbers, spoken_numbers[target_seq_number - 1]
+            result = (
+                spoken_numbers[last_spoken_number][-1]
+                - spoken_numbers[last_spoken_number][-2]
+            )
+        spoken_numbers[result].append(game_idx)
+        last_spoken_number = result
+    return spoken_numbers, last_spoken_number
 
 
 # Answers
