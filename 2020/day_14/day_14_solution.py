@@ -24,8 +24,7 @@ for line in DATA:
             if mask_val != "X":
                 MEMORY_VALUES[mask_idx] = mask_val
             # Join all values, convert to binary int type
-            VALUE = int("".join(MEMORY_VALUES), 2)
-            MEMORY[LOCATION] = VALUE
+            MEMORY[LOCATION] = int("".join(MEMORY_VALUES), 2)
 
 PART_1_ANS = sum(MEMORY.values())
 PART_1_TIME_MS = (timeit.default_timer() - PART_1_START_TIME) * 1000
