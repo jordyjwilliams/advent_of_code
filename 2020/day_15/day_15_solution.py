@@ -90,13 +90,12 @@ PART_2_START_TIME = timeit.default_timer()
 
 TARGET_IDX_PART_2 = 30_000_000
 
-## This should work... Takes a while
-# PART_2_ANS = get_idx_in_sequence(DATA, TARGET_IDX_PART_2)[1]
-PART_2_ANS = "TODO"
+## This takes a while --> try to speed up
+PART_2_ANS = get_idx_in_sequence(DATA, TARGET_IDX_PART_2)[1]
 PART_2_TIME_MS = (timeit.default_timer() - PART_2_START_TIME) * 1000
 
 if __name__ == "__main__":
     print(f"{PART_1_ANS=}\n")
     print(f"{PART_2_ANS=}\n")
 
-    print(f"Timed Results:\n{PART_1_TIME_MS=:.3f}\n{PART_2_TIME_MS:.3f}\n")
+    print(f"Timed Results:\n{PART_1_TIME_MS=:.3f}\n{PART_2_TIME_MS=:.3f}\n")
