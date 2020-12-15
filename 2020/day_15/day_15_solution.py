@@ -25,6 +25,11 @@ def get_last_elements(
     -------
     elements : list
         of idxes of data which are equal to target
+
+    Notes
+    -----
+    Previously was used, not currently in use by this solution
+    Use was omitted due to an increased performance in other ways
     """
     elements = []
     # Search backwards through the data
@@ -85,7 +90,7 @@ PART_2_START_TIME = timeit.default_timer()
 
 TARGET_IDX_PART_2 = 30_000_000
 
-
+## This should work... Takes a while
 # PART_2_ANS = get_idx_in_sequence(DATA, TARGET_IDX_PART_2)[1]
 PART_2_ANS = "TODO"
 PART_2_TIME_MS = (timeit.default_timer() - PART_2_START_TIME) * 1000
