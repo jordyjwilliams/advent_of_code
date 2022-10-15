@@ -6,7 +6,7 @@ authors = ["Jordy Williams <jordy_williams@hotmail.co.uk>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-numpy = "^1.19.4"
+numpy = "^1.22.0"
 typing = "^3.7.4"
 sympy = "^1.7.1"
 
