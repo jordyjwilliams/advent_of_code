@@ -20,7 +20,7 @@ def run_lint():
 
 def run_black(check_only: bool = True):
     """run black"""
-    args = ["black", "."]
+    args = ["black", "./"]
     if check_only:
         args.append("--check")
     return subprocess.run(args, check=False)
@@ -53,7 +53,7 @@ def run_format():
 
 
 def run_all_days():
-    """ Runner to run all day solutions """
+    """Runner to run all day solutions"""
     # year, day dir structure
     print("Note: Run each solution separatelyor more detailed print statements")
     solution_files = glob("./*/*/*solution*.py")
