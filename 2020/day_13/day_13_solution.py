@@ -3,7 +3,7 @@ import itertools
 import timeit
 from pathlib import Path
 
-from sympy.ntheory.modular import solve_congruence
+from sympy.ntheory.modular import solve_congruence  # pylint:disable=E0401
 
 # Constants
 DATA_PATH = Path.resolve(Path(__file__).parent)
