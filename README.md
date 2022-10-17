@@ -15,14 +15,14 @@ These solutions are not designed to be the fastest computationally. They are sim
 
 These solutions use [Poetry](https://poetry.eustace.io/) for packaging and dependencies:
 
-```
+```bash
 poetry install --no-dev
 ```
 
 - `numpy`
 - `sympy`
 
-These solutions require a version of `Python >= 3.8`
+These solutions require versions of `Python >= 3.8` and `poetry >= 1.2`
 
 ### Development dependencies
 
