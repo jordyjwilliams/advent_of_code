@@ -4,7 +4,7 @@ import subprocess
 import sys
 from glob import glob
 
-import pytest
+import pytest  # pylint:disable=E0401
 
 
 def exit_on_result(success: bool):

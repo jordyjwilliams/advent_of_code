@@ -17,7 +17,7 @@ DATA_PATH = Path.resolve(Path(__file__).parent)
 
 PART_2_SLOPES = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
 
-with open(DATA_PATH / "input.txt") as input_file:
+with open(DATA_PATH / "input.txt", encoding="UTF-8") as input_file:
     DATA = [
         line.strip() for line in input_file.readlines()
     ]  # each line will be one 'row' of map

@@ -5,7 +5,7 @@ from pathlib import Path
 # Constants
 DATA_PATH = Path.resolve(Path(__file__).parent)
 
-with open(DATA_PATH / "input.txt") as input_file:
+with open(DATA_PATH / "input.txt", encoding="UTF-8") as input_file:
     DATA = input_file.read().strip()
 
 
@@ -43,7 +43,7 @@ def group_count_yes_everyone(group_str: str) -> int:
     combined_str = group_str.replace("\n", "")
     unique_chars = "".join(set(combined_str))
     return sum(
-        [1 if combined_str.count(char) == group_size else 0 for char in unique_chars]
+        1 if combined_str.count(char) == group_size else 0 for char in unique_chars
     )
 
 

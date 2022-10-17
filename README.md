@@ -63,6 +63,8 @@ If these are not, there will be no error (failsafe) rather the day solutions wil
 
 
 ## TODO
-* improve singular day running `poetry run YYYY-DD` from function
-* possibly run timing iteratively
-* possibly graph timing for each day's solutions
+* Improve singular day running `poetry run YYYY-DD` from function
+* Possibly run timing iteratively
+* Possibly graph timing for each day's solutions
+* Fix `pytest-pylint` use.
+    * Can give have issues w/ lack of individualized output 

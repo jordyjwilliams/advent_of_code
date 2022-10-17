@@ -9,7 +9,7 @@ import numpy as np
 
 DATA_PATH = Path.resolve(Path(__file__).parent)
 
-with open(DATA_PATH / "input.txt") as input_file:
+with open(DATA_PATH / "input.txt", encoding="UTF-8") as input_file:
     DATA = [int(x) for x in input_file.readlines()]
 
 

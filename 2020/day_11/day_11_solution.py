@@ -9,7 +9,7 @@ from pathlib import Path
 DATA_PATH = Path.resolve(Path(__file__).parent)
 
 # read data line by line
-with open(DATA_PATH / "input.txt") as input_file:
+with open(DATA_PATH / "input.txt", encoding="UTF-8") as input_file:
     # Pad rows with "." floor charecters
     DATA = ["@" + line.strip() + "@" for line in input_file]
 
@@ -47,10 +47,8 @@ def number_occupied(
     """
     row_search_data = seat_lines[current_row_idx - 1 : current_row_idx + 2]
     return sum(
-        [
-            col[current_col_idx - 1 : current_col_idx + 2].count("#")
-            for col in row_search_data
-        ]
+        col[current_col_idx - 1 : current_col_idx + 2].count("#")
+        for col in row_search_data
     )
 
 
