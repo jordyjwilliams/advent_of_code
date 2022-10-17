@@ -43,7 +43,7 @@ def group_count_yes_everyone(group_str: str) -> int:
     combined_str = group_str.replace("\n", "")
     unique_chars = "".join(set(combined_str))
     return sum(
-        [1 if combined_str.count(char) == group_size else 0 for char in unique_chars]
+        1 if combined_str.count(char) == group_size else 0 for char in unique_chars
     )
 
 

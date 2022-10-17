@@ -230,11 +230,11 @@ def valid_passport_part_2(passport_data: ty.Dict[str, ty.Any]) -> bool:
 # Answers
 PART_1_START_TIME = timeit.default_timer()
 DATA_IN_PASSPORTS = split_data_into_passports(DATA)
-PART_1_ANS = sum([valid_passport_part_1(passport) for passport in DATA_IN_PASSPORTS])
+PART_1_ANS = sum(valid_passport_part_1(passport) for passport in DATA_IN_PASSPORTS)
 PART_1_TIME_MS = (timeit.default_timer() - PART_1_START_TIME) * 1000
 
 PART_2_START_TIME = timeit.default_timer()
-PART_2_ANS = sum([valid_passport_part_2(passport) for passport in DATA_IN_PASSPORTS])
+PART_2_ANS = sum(valid_passport_part_2(passport) for passport in DATA_IN_PASSPORTS)
 PART_2_TIME_MS = (timeit.default_timer() - PART_2_START_TIME) * 1000
 
 if __name__ == "__main__":
