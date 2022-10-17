@@ -9,7 +9,7 @@ from sympy.ntheory.modular import solve_congruence
 DATA_PATH = Path.resolve(Path(__file__).parent)
 
 # read data line by line
-with open(DATA_PATH / "input.txt") as input_file:
+with open(DATA_PATH / "input.txt", encoding="UTF-8") as input_file:
     DATA = input_file.readlines()
 
 # Answers

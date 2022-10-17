@@ -5,7 +5,7 @@ from pathlib import Path
 # Constants
 DATA_PATH = Path.resolve(Path(__file__).parent)
 
-with open(DATA_PATH / "input.txt") as input_file:
+with open(DATA_PATH / "input.txt", encoding="UTF-8") as input_file:
     DATA = input_file.read().strip()
 
 
