@@ -12,16 +12,15 @@ sympy = "^1.7.1"
 
 [tool.poetry.group.dev.dependencies]
 black = "22.3.0"
-pytest-pylint = "^0.18.0"
-pytest = "^6.1.2"
 isort = "^5.6.4"
+pylint = "^2.15.7"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
 addopts = "--pylint ./2020/ ./ --pylint-jobs=4"
 
 [tool.pylint.message_control]
-disable="line-too-long"
+disable="line-too-long,duplicate-code"
 
 [tool.poetry.scripts]
 lint = "poetry_utils:run_lint"
