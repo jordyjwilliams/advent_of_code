@@ -55,7 +55,7 @@ def run_format():
 def run_all_days():
     """Runner to run all day solutions"""
     # year, day dir structure
-    print("Note: Run each solution separatelyor more detailed print statements")
+    print("Note: Run each solution separately for more detailed print statements")
     solution_files = glob("./*/*/*solution*.py")
     for solution in sorted(solution_files):
         if "day_xx" in solution:
