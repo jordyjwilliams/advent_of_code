@@ -27,6 +27,8 @@ lint = "poetry_utils:run_lint"
 format = "poetry_utils:run_format"
 check_isort = "poetry_utils:check_isort"
 check_format = "poetry_utils:check_format"
+2020 = "poetry_utils:run_all_days(year=2020)"
+2022 = "poetry_utils:run_all_days(year=2022)"
 all_solutions = "poetry_utils:run_all_days"
 
 [tool.isort]

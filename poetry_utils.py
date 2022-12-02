@@ -52,14 +52,26 @@ def run_format():
     exit_on_result(run_black(check_only=False).returncode == 0)
 
 
-def run_all_days():
+def run_2020():
+    """runs all 2020 solutions"""
+    print("Running 2020 solutions\n")
+    run_all_days(year="2020")
+
+
+def run_2021():
+    """runs all 2021 solutions"""
+    print("Running 2021 solutions\n")
+    run_all_days(year="2021")
+
+
+def run_all_days(year="*"):
     """Runner to run all day solutions"""
     # year, day dir structure
     print("Note: Run each solution separately for more detailed print statements")
-    solution_files = glob("./*/*/*solution*.py")
+    solution_files = glob(f"./{year}/*/*solution*.py")
     for solution in sorted(solution_files):
         if "day_xx" in solution:
-            break
+            continue
         print(f"{solution}\n")
         mod_spec = importlib.util.spec_from_file_location("sol", solution)
         module = importlib.util.module_from_spec(mod_spec)
