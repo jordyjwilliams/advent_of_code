@@ -4,7 +4,8 @@ import subprocess
 import sys
 from glob import glob
 
-import pytest  # pylint:disable=E0401
+import pylint
+import pylint.lint
 
 
 def exit_on_result(success: bool):
@@ -13,9 +14,8 @@ def exit_on_result(success: bool):
 
 
 def run_lint():
-    """run linting using pytest-pylint"""
-    args = ["-m", "pylint", "./2020/"]
-    exit_on_result(pytest.main(args) == pytest.ExitCode.OK)
+    """run linting using pylint"""
+    exit_on_result(pylint.lint.Run(["./2020", "./2022"]) == pylint.ExitCode.OK)
 
 
 def run_black(check_only: bool = True):
