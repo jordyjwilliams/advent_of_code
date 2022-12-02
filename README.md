@@ -42,6 +42,7 @@ poetry run format                                   # Runs: isort & Black format
 poetry run check_format                             # Checks: Black formatting
 poetry run check_isort                              # Checks: isort formatter on files
 poetry run python ./YYYY/day_XX/day_XX_solution.py  # Runs: solution for given year/day
+poetry run YYYY                                     # Runs: all solutions for given year/day
 poetry run all_solutions                            # Runs: all year(s) code solutions
 ```
 
@@ -63,8 +64,6 @@ If these are not, there will be no error (failsafe) rather the day solutions wil
 
 
 ## TODO
-* Improve singular day running `poetry run YYYY-DD` from function
 * Possibly run timing iteratively
 * Possibly graph timing for each day's solutions
-* Fix `pytest-pylint` use.
-    * Can give have issues w/ lack of individualized output 
+* Add tests
