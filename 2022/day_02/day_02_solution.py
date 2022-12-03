@@ -55,11 +55,7 @@ def parse_dataline_to_scores(data: str, result_in_data: bool = False) -> ty.List
                 3 if (player_score == opp_score) else game_result_map[opp + result]
             )
         else:
-            switcher = {
-                0: loss_score_map[opp],
-                3: opp_score,
-                6: win_score_map[opp]
-            }
+            switcher = {0: loss_score_map[opp], 3: opp_score, 6: win_score_map[opp]}
             player_score += switcher.get(player_score, 0)
         scores.append(player_score)
     return scores
