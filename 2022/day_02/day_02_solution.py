@@ -34,30 +34,41 @@ def parse_dataline_to_scores(data: str, result_in_data: bool = False) -> ty.List
     scores : list[int]
         list of scores for each line
     """
-    # Part 1 maps
-    opp_score_map = {"A": 1, "B": 2, "C": 3}
-    player_score_map = {"X": 1, "Y": 2, "Z": 3}
-    game_result_map = {"AY": 6, "AZ": 0, "BX": 0, "BZ": 6, "CX": 6, "CY": 0}
-    # Part 2 maps
-    result_score_map = {"X": 0, "Y": 3, "Z": 6}
-    loss_score_map = {"A": 3, "B": 1, "C": 2}
-    win_score_map = {"A": 2, "B": 3, "C": 1}
+    # Part 1 game map data
+    result_map_player_data = {
+        "AX": 4,  # opp: R, player: R, game: draw - [1 + 3]
+        "AY": 8,  # opp: R, player: P, game: win - [2 + 6]
+        "AZ": 3,  # opp: R, player: S, game: loss - [3 + 0]
+        "BX": 1,  # opp: P, player: R, game: loss - [1 + 0]
+        "BY": 5,  # opp: P, player: P, game: draw - [2 + 3]
+        "BZ": 9,  # opp: P, player: S, game: win - [3 + 6]
+        "CX": 7,  # opp: S, player: R, game: win - [1 + 6]
+        "CY": 2,  # opp: S, player: P, game: loss - [2 + 0]
+        "CZ": 6,  # opp: S, player: S, game: draw - [3 + 3]
+    }
+    # Part 2 game map data
+    result_map_result_data = {
+        "AX": 3,  # opp: R, game: loss, player: S - [3 + 0]
+        "AY": 4,  # opp: R, game: draw, player: R - [1 + 3]
+        "AZ": 8,  # opp: R, game: win, player: P - [2 + 6]
+        "BX": 1,  # opp: P, game: loss, player: R - [1 + 0]
+        "BY": 5,  # opp: P, game: draw, player: P - [2 + 3]
+        "BZ": 9,  # opp: P, game: win, player: S - [3 + 6]
+        "CX": 2,  # opp: S, game: loss, player: P - [2 + 0]
+        "CY": 6,  # opp: S, game: draw, player: S - [3 + 3]
+        "CZ": 7,  # opp: S, game: win, player: R - [1 + 6]
+    }
 
     scores = []
     for line in data:
-        opp, result = line.replace("\n", "").split(" ")
-        opp_score = opp_score_map[opp]
-        player_score = (
-            result_score_map[result] if result_in_data else player_score_map[result]
-        )
-        if not result_in_data:
-            player_score += (
-                3 if (player_score == opp_score) else game_result_map[opp + result]
+        game_data = line.replace("\n", "").replace(" ", "")
+        scores.append(
+            (
+                result_map_result_data[game_data]
+                if result_in_data
+                else result_map_player_data[game_data]
             )
-        else:
-            switcher = {0: loss_score_map[opp], 3: opp_score, 6: win_score_map[opp]}
-            player_score += switcher.get(player_score, 0)
-        scores.append(player_score)
+        )
     return scores
 
 
