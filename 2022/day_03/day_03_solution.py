@@ -1,4 +1,4 @@
-""" Solution to Day XX of Advent of Code 2022 """
+""" Solution to Day 03 of Advent of Code 2022 """
 import timeit
 import typing as ty
 from pathlib import Path
