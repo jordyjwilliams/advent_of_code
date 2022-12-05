@@ -11,6 +11,9 @@ with open(DATA_PATH / "input.txt", encoding="UTF-8") as input_file:
     DATA = input_file.readlines()
 
 
+PRIORITY_MAP = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+
 def parse_dataline_to_bag_priority(data: str) -> ty.List[str]:
     """Priority for item which matches in both compartments of bag score for data line, returns list of integers.
 
@@ -24,13 +27,12 @@ def parse_dataline_to_bag_priority(data: str) -> ty.List[str]:
     priorities : list[int]
         list of scores for each line
     """
-    prio_map = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     priorities = []
     for line in data:
         line = line.replace("\n", "")
         compartment1 = set(line[: len(line) // 2])
         compartment2 = set(line[len(line) // 2 :])
-        priorities.append(prio_map.index((compartment1 & compartment2).pop()) + 1)
+        priorities.append(PRIORITY_MAP.index((compartment1 & compartment2).pop()) + 1)
     return priorities
 
 
@@ -47,13 +49,12 @@ def parse_dataset_to_bag_priority(data: str) -> ty.List[str]:
     priorities : list[int]
         list of scores for each line
     """
-    prio_map = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     priorities = []
     for idx in range(0, len(data), 3):
         bag_data = data[idx : idx + 3]
         bag_data = [line.replace("\n", "") for line in bag_data]
         bag1, bag2, bag3 = set(bag_data[0]), set(bag_data[1]), set(bag_data[2])
-        priorities.append(prio_map.index((bag1 & bag2 & bag3).pop()) + 1)
+        priorities.append(PRIORITY_MAP.index((bag1 & bag2 & bag3).pop()) + 1)
     return priorities
 
 
