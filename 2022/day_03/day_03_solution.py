@@ -68,7 +68,11 @@ PART_2_ANS = sum(parse_dataset_to_bag_priority(DATA))
 PART_2_TIME_MS = (timeit.default_timer() - PART_2_START_TIME) * 1000
 
 if __name__ == "__main__":
-    print(f"Sum of priorities for items matching within compartments (data line): {PART_1_ANS}\n")
-    print(f"Sum of priorities for items matching between elves (3 group): {PART_2_ANS}\n")
+    print(
+        f"Sum of priorities for items matching within compartments (data line): {PART_1_ANS}\n"
+    )
+    print(
+        f"Sum of priorities for items matching between elves (3 group): {PART_2_ANS}\n"
+    )
 
     print(f"Timed Results:\n{PART_1_TIME_MS=:.3f}\n{PART_2_TIME_MS=:.3f}\n")

@@ -30,23 +30,25 @@ def parse_dataline_to_containment(data: str, part2: bool = False) -> int:
     for line in data:
         range_data = [[int(num) for num in itm.split("-")] for itm in line.split(",")]
         # part one, one range fully contains another
-        ## TODO: cleanup this logic
         if (
-            range_data[0][0] >= range_data[1][0]
-            and range_data[0][1] <= range_data[1][1]
-            or range_data[1][0] >= range_data[0][0]
-            and range_data[1][1] <= range_data[0][1]
+            (
+                range_data[0][0] >= range_data[1][0]
+                and range_data[0][1] <= range_data[1][1]
+            )
+            or (
+                range_data[1][0] >= range_data[0][0]
+                and range_data[1][1] <= range_data[0][1]
+            )
             and not part2
         ):
             contained += 1
         # part two, assignment pair ranges overlap (at all)
-        ## TODO: invoke sets in nicer way.
         elif (
-            set(range(range_data[0][0], range_data[0][1] + 1)).intersection(
-                set(range(range_data[1][0], range_data[1][1] + 1))
+            not (
+                (range_data[0][1] < range_data[1][0])
+                or (range_data[1][1] < range_data[0][0])
             )
-            and part2
-        ):
+        ) and part2:
             contained += 1
     return contained
 
